@@ -14,9 +14,4 @@ class StaticPagesController < ApplicationController
   def top
   end
 
-  private
-
-  def only_users
-    redirect_to(root_url) if !current_user
-  end
 end
