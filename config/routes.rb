@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :comments
+  resources :comments, except: [:index]
   get 'posts/new'
   get 'posts/edit'
   get 'posts/show'
