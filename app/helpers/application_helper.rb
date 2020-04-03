@@ -13,4 +13,12 @@ module ApplicationHelper
           correct_user
         end
     end
+
+    def model_date(model)
+        if model.updated_at > model.created_at
+            "Created: #{model.created_at} | Updated: #{model.updated_at}"
+        else  
+            "Created: #{model.created_at}"
+        end
+    end
 end

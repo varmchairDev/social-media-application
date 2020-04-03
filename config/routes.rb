@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   
   resources :comments, except: [:index]
-  get 'posts/new'
-  get 'posts/edit'
-  get 'posts/show'
+  resources :posts, except: [:index]
   get '/home', to: "static_pages#home"
   get '/index', to: "static_pages#index"
   get '/trending', to: "static_pages#trending"
@@ -16,6 +14,7 @@ Rails.application.routes.draw do
                                     passwords: "users/passwords",
                                     registrations: "users/registrations",
                                     confirmations: "users/confirmations",
-                                    unlocks: "users/unlocks" }
+                                    unlocks: "users/unlocks",
+                                    profiles: "users/profiles/:id" }
 
 end
