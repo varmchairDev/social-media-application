@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post) %>
+    <br />
+    Sended by: <%= post.user.name %>
+    <br />
+    <%= model_date(post) %>
+    <hr />
+<% end %>

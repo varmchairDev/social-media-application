@@ -1,8 +1,17 @@
+before_action :set_user
+
 def show
 end
 
-def destroy
+def friends
+    @friends = @user.friends
+               .push(*@user.added_by_friends)
+               .sort_by { |f| f.created_at }
+               .reverse!
 end
 
-def friends
+private
+
+def set_user
+    @user = User.find(params[:id])
 end
