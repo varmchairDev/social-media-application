@@ -7,7 +7,7 @@ def friends
     @friends = @user.friends
                .push(*@user.added_by_friends)
                .sort_by { |f| f.created_at }
-               .reverse!
+               .reverse
 end
 
 private

@@ -1,7 +1,7 @@
 <h1>Users</h1>
 
 <% @users.each do |user| %>
-    <h3><%= user.name %></h3>
+    <h3><%= user.email %></h3>
     <br />
     <% if user.posts.exist? %>
         <h4>Last Post</h4>
@@ -28,7 +28,7 @@
         <hr />
     <% end %>
     <%= link_to 'View Profile', "/users/profiles/#{user.id}" %>
-    <% if user.friends.exist? %>
+    <% if user.friends.exist? || user.added_by_friends.exist? %>
         <%= link_to 'Friends', "/users/profiles/#{user.id}/friends" %>
     <% end %>
     <% if current_user.admin? && current_user != user %>

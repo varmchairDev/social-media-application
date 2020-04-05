@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
     <%= link_to post.title, post_path(post) %>
     <br />
-    Sended by: <%= post.user.name %>
+    Sended by: <%= post.user.email %>
     <br />
     <%= model_date(post) %>
     <hr />
