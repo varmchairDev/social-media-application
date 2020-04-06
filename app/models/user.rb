@@ -1,9 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  attr_accessor :all_friends
-
-  before_create { @all_friends = [] }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, 
@@ -27,7 +24,9 @@ class User < ApplicationRecord
                                     foreign_key: "friend_id",
                                     dependent: :destroy
 
-  has_many :added_friends, through: :sended_requests
+  has_many :added_friends, through: :sended_requests,
+                           source: :friend
+
   has_many :added_by_friends, through: :received_requests, 
                               source: :user
 

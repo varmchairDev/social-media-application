@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<section id="post-header">
+    <h1><%= @post.title %></h1>
+    <p>Sended by: <%= link_to @post.user.email, "/users/profiles/#{@post.user.id}" %> | <%= model_date(@post) %></p>
+    <p>Likes: <%= @post.liked_posts.count %></p>
+</section>
+
+<section id="post-content"><%= @post.content %></section>
+
+<hr />
+
+<section id="comment-section">
+    <% @post.comments.each do |comment| %>
+        <p>Sended by: <%= link_to comment.user.email, "/users/profiles/#{comment.user.id}" %> | <%= model_date(comment) %></p>
+        <p>Likes: <%= comment.liked_comments.count %></p>
+        <p><%= comment.content %></p>
+        <% if current_user == comment.user %>
+            <%= link_to 'Edit', edit_comment_path(comment) %>
+        <% end %>
+        <% if current_user.admin? %>
+            <%= link_to 'Delete', comment, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <hr />
+    <% end %>
+</section>

@@ -38,7 +38,7 @@
         <hr />
     <% end %>
     <%= link_to 'View Profile', "/users/profiles/#{user.id}" %>
-    <% if user.all_friends.exist? %>
+    <% if user.added_friends.exist? || user.added_by_friends.exist? %>
         <%= link_to 'Friends', "/users/profiles/#{user.id}/friends" %>
     <% end %>
     <% if current_user.admin? && current_user != user %>

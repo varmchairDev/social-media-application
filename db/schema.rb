@@ -15,27 +15,12 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "airports", force: :cascade do |t|
-    t.string "code"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "blocking_users", force: :cascade do |t|
     t.integer "blocker_id"
     t.integer "blocked_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blocker_id", "blocked_id"], name: "index_blocking_users_on_blocker_id_and_blocked_id", unique: true
-  end
-
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "flight_id"
-    t.integer "passenger_count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["flight_id"], name: "index_bookings_on_flight_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -46,15 +31,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "flights", force: :cascade do |t|
-    t.datetime "take_off_time"
-    t.datetime "arrival_time"
-    t.integer "from_airport_id"
-    t.integer "to_airport_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "friends", force: :cascade do |t|
@@ -81,15 +57,6 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_like_posts_on_post_id"
     t.index ["user_id"], name: "index_like_posts_on_user_id"
-  end
-
-  create_table "passengers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "booking_id"
-    t.index ["booking_id"], name: "index_passengers_on_booking_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -128,13 +95,11 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
-  add_foreign_key "bookings", "flights"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "like_comments", "comments"
   add_foreign_key "like_comments", "users"
   add_foreign_key "like_posts", "posts"
   add_foreign_key "like_posts", "users"
-  add_foreign_key "passengers", "bookings"
   add_foreign_key "posts", "users"
 end
