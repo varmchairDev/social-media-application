@@ -4,10 +4,8 @@ def show
 end
 
 def friends
-    @friends = @user.friends
-               .push(*@user.added_by_friends)
-               .sort_by { |f| f.created_at }
-               .reverse
+    @title = "Friends"
+    @friends = @user.all_friends
 end
 
 private
