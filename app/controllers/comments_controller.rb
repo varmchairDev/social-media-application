@@ -1,8 +1,16 @@
 class CommentsController < ApplicationController
   before_action :only_users
-  before_action :correct_user, only: [:edit, :update]
-  before_action :auth_check, only: [:destroy]
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+  before_action only: [:edit, :update] do
+    correct_user(find_comment)
+  end
+
+  before_action only: [:destroy] do 
+    auth_check(find_comment)
+  end
+  
+  before_action :set_comment, only: [:show, :edit, 
+                                     :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -63,6 +71,10 @@ class CommentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def find_comment
+      Comment.find(params[:id])
+    end
+
     def set_comment
       @comment = Comment.find(params[:id])
     end

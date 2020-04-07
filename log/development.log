@@ -3661,3 +3661,1930 @@ Content-Transfer-Encoding: 7bit
   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:27:10 +0300
+  [1m[35m (71.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (8.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (371.5ms)
+Completed 200 OK in 1849ms (Views: 1562.2ms | ActiveRecord: 148.8ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:27:29 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S6BPAjhr1ZI+5AVtXkKEwLhJYd7dX5XX74prHfXdNa1uhgyAvUnFdRT//EpekZoQwX7ytYamHzHnTp1hsstG6g==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (44.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+Completed 401 Unauthorized in 537ms (ActiveRecord: 46.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:27:29 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/home" for 127.0.0.1 at 2020-04-07 16:27:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/home"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:27:43 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:27:43 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 32ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:27:47 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:27:47 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:27:57 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SlrM89kqynTyqQfGdmzlON9XxJ41Ys0XBerx57LQ2DVvfI9xXAjak9iy/uF2v/vopmBX9W6bR/ENLgeb9carcg==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+Completed 401 Unauthorized in 153ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:27:57 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:28:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:28:02 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:29:05 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vxZrxZzcIllctaWgVRpyiNLC2X6GEIauc19AIkv2zn2aMChHGf4yvnauXIdVyWxYq/VKFd3pDEh7m7ZeDOC9Og==", "user"=>{"email"=>"bico@kara.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bico@kara.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+Completed 401 Unauthorized in 171ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:29:06 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (5.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 458ms (Views: 454.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:29:13 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:29:13 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:30:21 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 484ms (Views: 414.8ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:30:33 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OaKWvMBR+otJpuA01jTgmvF4l8SYrfghcTPMNWru7jAchNU+RXPqbGO9GRPW5/5KiE8Er8NUcsd59zpJLfiddw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+Completed 401 Unauthorized in 127ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:30:33 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:30:40 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:30:40 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2020-04-07 16:31:44 +0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.1ms)
+  Rendered users/registrations/new.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 122ms (Views: 120.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-04-07 16:31:58 +0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZvEdsl93WT8yNSINb6IBjlHVG4HYr0+3el/bsXj4sGaIkeHubvws/xVQMr/6ARswrmIy2cq8UcjRZCu6fVc1mw==", "user"=>{"email"=>"user@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[36mUser Create (129.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "user@mail.com"], ["encrypted_password", "$2a$11$3giWtjWxrkClXi2YR1GxwuzEChyv2wTNjWhBhBT7XKs7nVQeaO2nK"], ["confirmation_token", "x_9SVtF78F9A2Wxn-K_y"], ["confirmation_sent_at", "2020-04-07 13:31:58.630439"], ["created_at", "2020-04-07 13:31:58.630236"], ["updated_at", "2020-04-07 13:31:58.630236"]]
+  ↳ app/controllers/users/registrations_controller.rb:14
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/registrations_controller.rb:14
+  Rendering /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb (1.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 435.1ms
+Sent mail to user@mail.com (49.7ms)
+Date: Tue, 07 Apr 2020 16:32:01 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: user@mail.com
+Message-ID: <5e8c80d12a116_ae62af69b2aaba4382d@onur-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@mail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=x_9SVtF78F9A2Wxn-K_y">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2714ms (ActiveRecord: 131.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:01 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=x_9SVtF78F9A2Wxn-K_y" for 127.0.0.1 at 2020-04-07 16:32:13 +0300
+Processing by Users::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"x_9SVtF78F9A2Wxn-K_y"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "x_9SVtF78F9A2Wxn-K_y"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (73.8ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-04-07 13:32:13.347797"], ["updated_at", "2020-04-07 13:32:13.348469"], ["id", 3]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 89ms (ActiveRecord: 76.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:32:13 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2xtsrMkVO7Oz1gl2eUBcRdjVr6OQAyoKDiNRP8+AYVn+PS8uTDcrVJnN8FF5k0KVoeI8yMv6oOwG56dDiJYSHg==", "user"=>{"email"=>"user@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2020-04-07 13:32:23.845619"], ["last_sign_in_at", "2020-04-07 13:32:23.845619"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2020-04-07 13:32:23.848242"], ["id", 3]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 302 Found in 159ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:23 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:32:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:32:31 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 110ms (Views: 67.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/trending" for 127.0.0.1 at 2020-04-07 16:32:39 +0300
+Processing by StaticPagesController#trending as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (16.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at < '2020-04-07 10:32:39.764346')[0m
+  ↳ app/controllers/static_pages_controller.rb:14
+  Rendering static_pages/trending.html.erb within layouts/application
+  Rendered static_pages/_view_posts.html.erb (7.0ms)
+  Rendered static_pages/trending.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 253ms (Views: 95.4ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:35:59 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (476.6ms)
+Completed 500 Internal Server Error in 494ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sign_out_path' for #<#<Class:0x00007fa715f74e00>:0x000055ed36edc2f8>):
+    4: <%= link_to 'Top', top_path %> |
+    5: <%= link_to 'Trending', trending_path %> |
+    6: <%= link_to 'Create a New Post', new_post_path %>
+    7: <%= link_to 'Log Out', sign_out_path, method: :delete %>
+  
+app/views/static_pages/home.html.erb:7:in `_app_views_static_pages_home_html_erb__1174163742305918032_47238658564920'
+Started PUT "/__web_console/repl_sessions/b5a724b8bb4aa6d63993554d342abd87" for 127.0.0.1 at 2020-04-07 16:37:04 +0300
+Started PUT "/__web_console/repl_sessions/b5a724b8bb4aa6d63993554d342abd87" for 127.0.0.1 at 2020-04-07 16:37:06 +0300
+Started PUT "/__web_console/repl_sessions/b5a724b8bb4aa6d63993554d342abd87" for 127.0.0.1 at 2020-04-07 16:37:16 +0300
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:38:18 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (542.2ms)
+Completed 500 Internal Server Error in 636ms (ActiveRecord: 7.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users_sign_out_path' for #<#<Class:0x000056202bd5c338>:0x000056202bd6e0d8>
+Did you mean?  user_session_path):
+    4: <%= link_to 'Top', top_path %> |
+    5: <%= link_to 'Trending', trending_path %> |
+    6: <%= link_to 'Create a New Post', new_post_path %>
+    7: <%= link_to 'Log Out', users_sign_out_path, method: :delete %>
+  
+app/views/static_pages/home.html.erb:7:in `_app_views_static_pages_home_html_erb__3160894018122198779_47348087189280'
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:24 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:38:25 +0300
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:38:32 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (444.2ms)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users_sign_out_path' for #<#<Class:0x000056202bd5c338>:0x000056202c156600>
+Did you mean?  user_session_path):
+    4: <%= link_to 'Top', top_path %> |
+    5: <%= link_to 'Trending', trending_path %> |
+    6: <%= link_to 'Create a New Post', new_post_path %>
+    7: <%= link_to 'Log Out', users_sign_out_path, method: :delete %>
+  
+app/views/static_pages/home.html.erb:7:in `_app_views_static_pages_home_html_erb__3160894018122198779_47348089273960'
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:38:49 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 376ms (Views: 370.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sing_out" for 127.0.0.1 at 2020-04-07 16:38:53 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/users/sing_out"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/users/sing_out" for 127.0.0.1 at 2020-04-07 16:39:54 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/users/sing_out"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2020-04-07 16:40:00 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 34.3ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-07 16:40:04 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8R6+6tbMAxXV5pjPYrD7GnYBjZl1OszxcUTAGu2sCtwifuE3OdF3hib1GwmfS3xVuviMjP1z5KMAL6IJptkU/Q=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:18
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:40:04 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:40:58 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 99ms (Views: 60.0ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-07 16:41:16 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fxKJpAzeOerq5TbetHCT3xgN7a0C0rnJF7yr4xZZALoqEHPapkV9JF/V9nz7gxAz04DoPSRqPfeelJJ1t/EStg==", "user"=>{"email"=>"user@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2020-04-07 13:41:16.183343"], ["sign_in_count", 2], ["updated_at", "2020-04-07 13:41:16.184471"], ["id", 3]]
+  ↳ app/controllers/users/sessions_controller.rb:14
+  [1m[35m (59.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:14
+Redirected to http://localhost:3000/
+Redirected to 
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 62.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users/sessions_controller.rb:15:in `create'
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:01 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:01 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:01 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:01 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:01 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:02 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:44:37 +0300
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:14 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:48 +0300
+  
+SyntaxError (/home/onur/the-odin-project/social-media-app/config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+  root "/home" to: "static_pages#home"
+               ^~):
+  
+config/routes.rb:3: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:45:57 +0300
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:50 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:50:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:28 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:29 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:30 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:54:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:55:58 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_up
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:56:23 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_up
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:56:37 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_up
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:56:38 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_up
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:56:56 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 16:56:57 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:40:50 +0300
+  
+SyntaxError (/home/onur/the-odin-project/social-media-app/app/helpers/application_helper.rb:7: syntax error, unexpected ')', expecting end
+...ess current_user == model.user)
+...                              ^
+/home/onur/the-odin-project/social-media-app/app/helpers/application_helper.rb:24: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/application_helper.rb:7: syntax error, unexpected ')', expecting end
+app/helpers/application_helper.rb:24: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/static_pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:41:17 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:41:21 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:41:22 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:41:22 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:56:03 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000users/sign_in
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:57:36 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:58:34 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000users/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:58:38 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:58:39 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-07 17:59:29 +0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-07 17:59:29 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (4.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (36.7ms)
+Completed 200 OK in 640ms (Views: 600.9ms | ActiveRecord: 5.5ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-04-07 15:05:19.085640"], ["updated_at", "2020-04-07 15:05:19.087901"], ["id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-04-07 15:05:41.477406"], ["updated_at", "2020-04-07 15:05:41.478310"], ["id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]

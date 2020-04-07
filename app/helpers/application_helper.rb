@@ -1,16 +1,16 @@
 module ApplicationHelper
     def only_users
-        redirect_to(root_url) if !current_user
+        redirect_to "users/sign_in" if !current_user
     end
 
-    def correct_user
-        redirect_to(root_url) unless current_user == Post.find(params[:id])
+    def correct_user(model)
+        redirect_to(root_url) unless current_user == model.user
     end
     
-    def auth_check
+    def auth_check(model)
         if current_user.admin?
         else
-          correct_user
+          correct_user(model)
         end
     end
 
