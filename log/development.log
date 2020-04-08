@@ -5588,3 +5588,1651 @@ Completed 200 OK in 640ms (Views: 600.9ms | ActiveRecord: 5.5ms)
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (20.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:13:44 +0300
+  [1m[35m (77.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:13:45 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (362.8ms)
+Completed 200 OK in 1642ms (Views: 1599.8ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:14:02 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sAHCK8ORKNb9FydEkomFs7P4vBmQl/ITj/lyVT11zi3+qC6E/rv4phxtBWBVtoy+VqRfo9kpNJ/9QrGyNqhQmQ==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[36mUser Update (196.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2020-04-08 15:14:03.703375"], ["last_sign_in_at", "2020-04-08 15:14:03.703375"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2020-04-08 15:14:03.704338"], ["id", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13
+  [1m[35m (177.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users/sessions_controller.rb:13
+Redirected to http://localhost:3000/
+Completed 500 Internal Server Error in 1315ms (ActiveRecord: 374.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/users/sessions_controller.rb:13:in `create'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:14:22 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:14:31 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:14:45 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:14:46 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:18:04 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:19:55 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 303ms (Views: 273.9ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:20:05 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q5Vu7JJ+utYrp5reMq3mDu20+urCBaBtTvVnIuWzLmgNPIJDr1RqpsrduPr1ku8DCOgZUIu7ZuE8TqTF7m6w3A==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2020-04-08 15:20:05.474336"], ["sign_in_count", 2], ["updated_at", "2020-04-08 15:20:05.475280"], ["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 34.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+actionpack (5.2.4.2) lib/action_controller/metal/rendering.rb:35:in `render'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:46:in `block (2 levels) in render'
+activesupport (5.2.4.2) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (5.2.4.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:46:in `block in render'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+activerecord (5.2.4.2) lib/active_record/railties/controller_runtime.rb:31:in `cleanup_view_runtime'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:45:in `render'
+responders (3.0.0) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.0) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.0) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.0) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.0) lib/action_controller/respond_with.rb:213:in `respond_with'
+devise (4.7.1) app/controllers/devise/sessions_controller.rb:23:in `create'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:20:46 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 58ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:20:51 +0300
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:20:58 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 31ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:21:03 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q+3rZIZen4U+fi7MwntdRi+BuGy5Xr+Kt166g/mASt8NRAfLu3RP9d8EDOgFRFRLyt1b1vDgeQbF5Xlk8l3Uaw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-08 15:21:03.990193"], ["last_sign_in_at", "2020-04-08 15:20:05.474336"], ["sign_in_count", 3], ["updated_at", "2020-04-08 15:21:03.991255"], ["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 172ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:21:04 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:21:04 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/profiles/:id" for 127.0.0.1 at 2020-04-08 18:21:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/profiles/:id"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=p" for 127.0.0.1 at 2020-04-08 18:21:56 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"p"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=pr" for 127.0.0.1 at 2020-04-08 18:21:59 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"pr"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=pro" for 127.0.0.1 at 2020-04-08 18:21:59 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"pro"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=prof" for 127.0.0.1 at 2020-04-08 18:22:00 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"prof"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=profi" for 127.0.0.1 at 2020-04-08 18:22:01 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"profi"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:33:41 +0300
+  [1m[35m (15.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:33:41 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (239.3ms)
+Completed 200 OK in 702ms (Views: 655.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:33:49 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o1JUFysQqWmXBzI7nTZy6K/BOQ8pjmcx+0ZWbSlDeXIeIDyZ2hta6wxQki8ERMj6+qSPJLLYUYx+7mgZIl4ozg==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-08 15:33:50.338611"], ["last_sign_in_at", "2020-04-08 15:21:03.990193"], ["sign_in_count", 4], ["updated_at", "2020-04-08 15:33:50.340188"], ["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 394ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:33:50 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:33:50 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/profiles/:id" for 127.0.0.1 at 2020-04-08 18:33:52 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/profiles/:id"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:37:18 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/:id" for 127.0.0.1 at 2020-04-08 18:37:21 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:39:13 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 36.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:39:15 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/rails/info/routes?path=pro" for 127.0.0.1 at 2020-04-08 18:39:36 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"pro"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:44:20 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:44:58 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:47:35 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 71ms (Views: 33.9ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:47:37 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:48:00 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 70ms (Views: 31.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:48:01 +0300
+  
+ActionController::RoutingError (undefined method `before_filter' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:53:57 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 78ms (Views: 37.0ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:53:59 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-08 18:54:08 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cvRxnwNZdbv8TfCkPG+p3Tj9meerMyZ9Nx0bIfo1hj73pG8YGDWW6HJx+lSniODafGcbILg6vqdtHgcXzq/2ZA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:54:09 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:54:09 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:54:20 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 14ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:54:20 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 366ms (Views: 332.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:54:31 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NM8QN7TPTAyhqXMWDErqWgmA/8sLFx25SnKgF7bvNY/pAVkNZp5uzJz9iOf2bfyatrawRElDJ8VWcK3whuw4RQ==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-08 15:54:31.963258"], ["last_sign_in_at", "2020-04-08 15:33:50.338611"], ["sign_in_count", 5], ["updated_at", "2020-04-08 15:54:31.964740"], ["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (180.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 300ms (ActiveRecord: 182.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:54:32 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:54:32 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:54:37 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/profiles/1" for 127.0.0.1 at 2020-04-08 18:54:53 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:55:04 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 18:55:04 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-04-08 18:57:05 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering posts/new.html.erb within layouts/application
+  Rendered shared/_show_errors.html.erb (1.2ms)
+  Rendered posts/_form.html.erb (39.3ms)
+  Rendered posts/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 513ms (Views: 73.9ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/trending" for 127.0.0.1 at 2020-04-08 18:57:11 +0300
+Processing by StaticPagesController#trending as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (221.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at < '2020-04-08 12:57:11.958099')[0m
+  ↳ app/controllers/static_pages_controller.rb:14
+  Rendering static_pages/trending.html.erb within layouts/application
+  Rendered static_pages/_view_posts.html.erb (0.4ms)
+  Rendered static_pages/trending.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 291ms (Views: 38.1ms | ActiveRecord: 221.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:57:15 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered shared/_view_users.html.erb (22.1ms)
+  Rendered static_pages/index.html.erb within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `exist?' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  exists?):
+    3: <% @users.each do |user| %>
+    4:     <h3><%= user.email %></h3>
+    5:     <br />
+    6:     <% if user.posts.exist? %>
+    7:         <h4>Last Post</h4>
+    8:         <br />
+    9:         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
+  
+app/views/shared/_view_users.html.erb:6:in `block in _app_views_shared__view_users_html_erb___330664634285182702_70139714436500'
+app/views/shared/_view_users.html.erb:3:in `_app_views_shared__view_users_html_erb___330664634285182702_70139714436500'
+app/views/static_pages/index.html.erb:1:in `_app_views_static_pages_index_html_erb___3938921830753288976_70139714385940'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:57:47 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered shared/_view_users.html.erb (10.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `exist?' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  exists?):
+    3: <% @users.each do |user| %>
+    4:     <h3><%= user.email %></h3>
+    5:     <br />
+    6:     <% if user.posts.exist? %>
+    7:         <h4>Last Post</h4>
+    8:         <br />
+    9:         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
+  
+app/views/shared/_view_users.html.erb:6:in `block in _app_views_shared__view_users_html_erb___330664634285182702_47101777904100'
+app/views/shared/_view_users.html.erb:3:in `_app_views_shared__view_users_html_erb___330664634285182702_47101777904100'
+app/views/static_pages/index.html.erb:1:in `_app_views_static_pages_index_html_erb___3938921830753288976_47101777887800'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:57:49 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered shared/_view_users.html.erb (10.6ms)
+  Rendered static_pages/index.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `exist?' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  exists?):
+    3: <% @users.each do |user| %>
+    4:     <h3><%= user.email %></h3>
+    5:     <br />
+    6:     <% if user.posts.exist? %>
+    7:         <h4>Last Post</h4>
+    8:         <br />
+    9:         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
+  
+app/views/shared/_view_users.html.erb:6:in `block in _app_views_shared__view_users_html_erb___330664634285182702_70139710862320'
+app/views/shared/_view_users.html.erb:3:in `_app_views_shared__view_users_html_erb___330664634285182702_70139710862320'
+app/views/static_pages/index.html.erb:1:in `_app_views_static_pages_index_html_erb___3938921830753288976_70139705844480'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:57:53 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered shared/_view_users.html.erb (27.2ms)
+  Rendered static_pages/index.html.erb within layouts/application (29.7ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `exist?' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  exists?):
+    3: <% @users.each do |user| %>
+    4:     <h3><%= user.email %></h3>
+    5:     <br />
+    6:     <% if user.posts.exist? %>
+    7:         <h4>Last Post</h4>
+    8:         <br />
+    9:         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
+  
+app/views/shared/_view_users.html.erb:6:in `block in _app_views_shared__view_users_html_erb___330664634285182702_70139714192680'
+app/views/shared/_view_users.html.erb:3:in `_app_views_shared__view_users_html_erb___330664634285182702_70139714192680'
+app/views/static_pages/index.html.erb:1:in `_app_views_static_pages_index_html_erb___3938921830753288976_70139714160840'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:58:14 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (104.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (5.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (216.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (1051.7ms)
+  Rendered static_pages/index.html.erb within layouts/application (1053.0ms)
+Completed 500 Internal Server Error in 1057ms (ActiveRecord: 336.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x000055ad797b6958>:0x000055ad797a2a48>
+Did you mean?  user_unlock_path):
+    42:         <%= link_to 'Friends', "/profiles/#{user.id}/friends" %>
+    43:     <% end %>
+    44:     <% if current_user.admin? && current_user != user %>
+    45:         <%= link_to 'Delete', user, method: :delete, data: { confirm: "Are you sure?" } %>
+    46:     <% end %>
+    47:     <hr />
+    48: <% end %>
+  
+app/views/shared/_view_users.html.erb:45:in `block in _app_views_shared__view_users_html_erb___330664634285182702_47101777888740'
+app/views/shared/_view_users.html.erb:3:in `_app_views_shared__view_users_html_erb___330664634285182702_47101777888740'
+app/views/static_pages/index.html.erb:1:in `_app_views_static_pages_index_html_erb___3938921830753288976_47101777877540'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 18:59:47 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (37.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 98ms (Views: 88.6ms | ActiveRecord: 6.9ms)
+
+
+Started DELETE "/users" for 127.0.0.1 at 2020-04-08 18:59:55 +0300
+Processing by Users::RegistrationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xHCymztptqUIHX+j70ApF7bpPDA/xrSlnfSH11Ges1i14yd71tiA7pGjtjV3EgSmnhZF2wyKrOFsfVVDoOExcQ=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mLikePost Load (0.2ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mLikeComment Load (0.7ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE "like_comments"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriend Destroy (0.4ms)[0m  [1m[31mDELETE FROM "friends" WHERE "friends"."id" = $1[0m  [["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."friend_id" = $1[0m  [["friend_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlockingUser Load (20.1ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocker_id" = $1[0m  [["blocker_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlockingUser Load (0.1ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocked_id" = $1[0m  [["blocked_id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (151.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 258ms (ActiveRecord: 183.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 18:59:56 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 18:59:56 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:00:13 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hhNlUqI4u1QtTA4uDygna+A27nV6twjjJO66jekeBXNcb3pE8gHlSV7/m7UldnOoyHVnv/U6rXc2oJb+PLjo3w==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hhNlUqI4u1QtTA4uDygna+A27nV6twjjJO66jekeBXNcb3pE8gHlSV7/m7UldnOoyHVnv/U6rXc2oJb+PLjo3w==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 130ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (178.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "admin@mail.com"], ["encrypted_password", "$2a$11$F7FZEXFbYSBk5hQqrGl.BOzPJDFwWknsvCa5Tr.LFmzufuJcMmwl2"], ["confirmation_token", "ixCNqM4oyEtvxcsAazfa"], ["confirmation_sent_at", "2020-04-08 16:02:58.875470"], ["created_at", "2020-04-08 16:02:58.875287"], ["updated_at", "2020-04-08 16:02:58.875287"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb (1.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 344.2ms
+Sent mail to admin@mail.com (49.8ms)
+Date: Wed, 08 Apr 2020 19:03:01 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: admin@mail.com
+Message-ID: <5e8df5b5357f1_47312b22bfa21964689c3@onur-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome admin@mail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=ixCNqM4oyEtvxcsAazfa">Confirm my account</a></p>
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "admin" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-04-08 16:03:35.655209"], ["admin", true], ["id", 4]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-04-08 16:03:41.414220"], ["updated_at", "2020-04-08 16:03:41.414793"], ["id", 4]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:04:25 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 393ms (Views: 339.3ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:04:33 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h1gIVl3IvIOp+5O+3mKrD/KO6UCifavvSXb5POPT9q9dJBdADfHintpIBiX0PP/M2s1gii3wDntbONVPNnUbAw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2020-04-08 16:04:34.069788"], ["last_sign_in_at", "2020-04-08 16:04:34.069788"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2020-04-08 16:04:34.071009"], ["id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (444.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 560ms (ActiveRecord: 446.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:04:34 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:04:34 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:04:37 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 4], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (76.5ms)
+  Rendered static_pages/index.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 117ms (Views: 99.7ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/profiles/3" for 127.0.0.1 at 2020-04-08 19:04:40 +0300
+  
+ActionController::RoutingError (undefined method `before_action' for main:Object):
+  
+app/controllers/profiles_controller.rb:1:in `<main>'
+Started DELETE "/users.3" for 127.0.0.1 at 2020-04-08 19:04:45 +0300
+Processing by Users::RegistrationsController#destroy as 
+  Parameters: {"authenticity_token"=>"t3ZWpfpp0Pi5YtBw63mj97fea0IIvTKcLsYi6W5YPzvquZwpA7y9lLCCuvTlAvuHGCb1YvVmftr1OjnZPJmVFQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mLikePost Load (0.3ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mLikeComment Load (0.4ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE "like_comments"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriend Load (0.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mFriend Load (0.5ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."friend_id" = $1[0m  [["friend_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlockingUser Load (0.5ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocker_id" = $1[0m  [["blocker_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlockingUser Load (0.3ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocked_id" = $1[0m  [["blocked_id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Destroy (1.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 406 Not Acceptable in 50ms (ActiveRecord: 9.3ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+responders (3.0.0) lib/action_controller/respond_with.rb:215:in `respond_with'
+devise (4.7.1) app/controllers/devise_controller.rb:202:in `respond_with_navigational'
+devise (4.7.1) app/controllers/devise/registrations_controller.rb:70:in `destroy'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (5.2.4.2) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:04:48 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:04:51 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:04:54 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.3ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:05:00 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxcnkawqzuWqIphDcybQbO4aad102QpozrMhqCqtT8WS2O0dVf+jiaPC8sd9XYgcQeL3/YkCRi4VTzqYeGzl6w==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.6ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zxcnkawqzuWqIphDcybQbO4aad102QpozrMhqCqtT8WS2O0dVf+jiaPC8sd9XYgcQeL3/YkCRi4VTzqYeGzl6w==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (2.4ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 157ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "admin@mail.com"], ["encrypted_password", "$2a$11$y.5MQlWkG2FxC9nG1MLOcOW2LM8UHjf4U6HUx.FawZzsDelEb.Nx6"], ["confirmation_token", "Z_8-4CxC1ExsJLSTA-Hb"], ["confirmation_sent_at", "2020-04-08 16:05:11.699065"], ["created_at", "2020-04-08 16:05:11.698862"], ["updated_at", "2020-04-08 16:05:11.698862"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/mailer/confirmation_instructions.html.erb (1.4ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 45.1ms
+Sent mail to admin@mail.com (3.3ms)
+Date: Wed, 08 Apr 2020 19:05:11 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: admin@mail.com
+Message-ID: <5e8df637c2412_47852b22bfa219642849@onur-VirtualBox.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome admin@mail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Z_8-4CxC1ExsJLSTA-Hb">Confirm my account</a></p>
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "admin" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2020-04-08 16:05:24.318700"], ["admin", true], ["id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-04-08 16:05:27.606501"], ["updated_at", "2020-04-08 16:05:27.607119"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:08:48 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#home as HTML
+Redirected to http://localhost:3000users/sign_in
+Filter chain halted as :only_users rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:08:51 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:08:52 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 362ms (Views: 309.5ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:08:58 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XWz2ujVFTuAbkLchD7oVAkUFdgv10nbU1YRHcwjFF5kAozw2zJAjjBJw3aUBwU1y6v3oKwgJOpIOeFxDWgS9tw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2020-04-08 16:08:58.293573"], ["last_sign_in_at", "2020-04-08 16:08:58.293573"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2020-04-08 16:08:58.295084"], ["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (78.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 80.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:08:58 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:08:58 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-08 19:08:59 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:18
+Completed 406 Not Acceptable in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (ProfilesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.4.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.4.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.4.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.4.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.4.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.4.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.4.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.4.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.4.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.4.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.4.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.4.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.4.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:21:34 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 60ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:21:34 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 803ms (Views: 798.8ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-08 19:21:38 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"idBaM0G4prx8kBVYkawHkNkiyGpOdBOyI9qrQLkutLJDf6wtz/Pz3fYK+gVXud7JZlk18EqlxRsPyg1J90rjaA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:21:38 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:21:38 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:21:43 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XcxyUAvI+In4pF+HtumNROzfi6/iyBiJ9JRk5GD0RMHkYFre5nDfhQBee5leU2vJYdD6+H/NOGf52fFYjfBMiA==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2020-04-08 16:21:43.841580"], ["sign_in_count", 2], ["updated_at", "2020-04-08 16:21:43.842737"], ["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (357.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 470ms (ActiveRecord: 358.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:21:44 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:21:44 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:21:46 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (66.4ms)
+  Rendered static_pages/index.html.erb within layouts/application (67.3ms)
+Completed 200 OK in 119ms (Views: 99.9ms | ActiveRecord: 15.9ms)
+
+
+Started DELETE "/delete/user/3" for 127.0.0.1 at 2020-04-08 19:21:52 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/delete/user/3"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:22:42 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (71.6ms)
+  Rendered static_pages/index.html.erb within layouts/application (73.2ms)
+Completed 200 OK in 160ms (Views: 108.5ms | ActiveRecord: 18.9ms)
+
+
+Started DELETE "/delete/user/3" for 127.0.0.1 at 2020-04-08 19:22:46 +0300
+Processing by DeleteUserController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aUQKjtzTNhFLFQqH/N8ZEjLo1NQ0foNzyLu8qmDqnnQOvQtjxEFzblBdJ+GuFHBFCAO++l/UjfxKZccGp7LYpQ==", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/delete_user_controller.rb:2
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mLikePost Load (0.2ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mLikeComment Load (0.1ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE "like_comments"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mFriend Load (0.1ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE "friends"."friend_id" = $1[0m  [["friend_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mBlockingUser Load (0.2ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocker_id" = $1[0m  [["blocker_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mBlockingUser Load (0.1ms)[0m  [1m[34mSELECT "blocking_users".* FROM "blocking_users" WHERE "blocking_users"."blocked_id" = $1[0m  [["blocked_id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[36mUser Destroy (1.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/delete_user_controller.rb:5
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/delete_user_controller.rb:5
+Redirected to http://localhost:3000/index
+Completed 302 Found in 57ms (ActiveRecord: 33.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:22:47 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (23.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 60ms (Views: 48.5ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-08 19:22:52 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (38.4ms)
+  Rendered static_pages/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 75ms (Views: 66.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-08 19:28:09 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-08 19:28:12 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VX3n/eskr1HKAALYviPy7kjTVjY0j1/W9s1gayqbT18yhOYQ87bqLtFIL77s6Ju5cjg8GF8lUVl0ExvH7cMJjg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-08 19:28:12 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-08 19:28:12 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.1ms)
+  Rendered users/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+

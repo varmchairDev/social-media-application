@@ -3,7 +3,7 @@
 <% @users.each do |user| %>
     <h3><%= user.email %></h3>
     <br />
-    <% if user.posts.exist? %>
+    <% if user.posts.exists? %>
         <h4>Last Post</h4>
         <br />
         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
@@ -11,7 +11,7 @@
         <%= model_date(user.posts.last) %>
         <hr />
     <% end %>
-    <% if user.comments.exist?  %>
+    <% if user.comments.exists?  %>
         <h4>Last Comment</h4>
         <br />
         <%= link_to user.comments.last.content, post_path(user.comments.last.post) %>
@@ -19,7 +19,7 @@
         <%= model_date(user.comments.last) %>
         <hr />
     <% end %>
-    <% if user.liked_posts.exist? %>
+    <% if user.liked_posts.exists? %>
         <% post = Post.find(user.liked_posts.last.post_id) %>
         <h4>Last Liked Post</h4>
         <br />
@@ -28,7 +28,7 @@
         <%= model_date(user.liked_posts.last) %>
         <hr />
     <% end %>
-    <% if user.liked_comments.exist? %>
+    <% if user.liked_comments.exists? %>
         <% comment = Comment.find(user.liked_comments.last.comment_id) %>
         <h4>Last Liked Comment</h4>
         <br />
@@ -37,12 +37,12 @@
         <%= model_date(comment) %>
         <hr />
     <% end %>
-    <%= link_to 'View Profile', "/users/profiles/#{user.id}" %>
-    <% if user.added_friends.exist? || user.added_by_friends.exist? %>
-        <%= link_to 'Friends', "/users/profiles/#{user.id}/friends" %>
+    <%= link_to 'View Profile', "/profiles/#{user.id}" %>
+    <% if user.added_friends.exists? || user.added_by_friends.exists? %>
+        <%= link_to 'Friends', "/profiles/#{user.id}/friends" %>
     <% end %>
     <% if current_user.admin? && current_user != user %>
-        <%= link_to 'Delete', user, method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to 'Delete', "/delete/user/#{user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
     <hr />
 <% end %>

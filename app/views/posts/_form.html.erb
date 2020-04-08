@@ -1,0 +1,15 @@
+<%= form_for(@post) do |f| %>
+    <%= render 'shared/show_errors', model: @post %>
+    
+    <%= f.label "Title:" %>
+    <%= f.text_field :title %>
+
+    <hr />
+
+    <%= f.label "Content:" %>
+    <%= f.text_area :content %>
+
+    <hr />
+
+    <%= f.submit %>
+<% end %>
