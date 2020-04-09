@@ -43,6 +43,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = current_user.comments.build
   end
 
 
@@ -57,7 +58,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = find_post
   end
 
 end

@@ -1,0 +1,2 @@
+module LikingPostsHelper
+end

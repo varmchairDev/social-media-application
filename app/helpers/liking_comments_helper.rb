@@ -1,0 +1,2 @@
+module LikingCommentsHelper
+end

@@ -8,17 +8,27 @@
 
 <hr />
 
+<section id="render-new-comment-form">
+    <h3 id="comment-form-title">Send Your Comment</h3>
+    <%= render 'comments/new' %>
+</section>
+
+<hr />
+
 <section id="comment-section">
     <% @post.comments.each do |comment| %>
-        <p>Sended by: <%= link_to comment.user.email, "/profiles/#{comment.user.id}" %> | <%= model_date(comment) %></p>
-        <p>Likes: <%= comment.liked_comments.count %></p>
-        <p><%= comment.content %></p>
-        <% if current_user == comment.user %>
-            <%= link_to 'Edit', edit_comment_path(comment) %>
-        <% end %>
-        <% if current_user.admin? %>
-            <%= link_to 'Delete', comment, method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
+        <% section_id = "comment-#{comment.id}" %>
+        <section id=<%= section_id%>>
+            <p>Sended by: <%= link_to comment.user.email, "/profiles/#{comment.user.id}" %> | <%= model_date(comment) %></p>
+            <p>Likes: <%= comment.liked_comments.count %></p>
+            <p><%= comment.content %></p>
+            <% if current_user == comment.user %>
+                <%= link_to 'Edit', edit_comment_path(comment) %>
+            <% end %>
+            <% if current_user.admin? %>
+                <%= link_to 'Delete', comment, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
+        </section>
         <hr />
     <% end %>
 </section>

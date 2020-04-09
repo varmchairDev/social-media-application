@@ -7,9 +7,15 @@ class ProfilesController < ApplicationController
 
     def friends
         @title = "Friends"
-        @users = Friend.where("user_id = ? OR friend_id = ?", @user.id)
-                .order(desc: :created_at)
-                .map { |f| f.user_id != @user.id ? User.find(f.user_id) : User.find(f.friend_id) }
+        @users = get_friends(@user)
+    end
+
+    def user_posts
+        @posts = Post.where("user_id = ?", @user.id)
+    end
+
+    def user_comments
+        @comments = Comment.where("user_id = ?", @user.id)
     end
 
     private

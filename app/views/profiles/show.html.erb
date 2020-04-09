@@ -1,0 +1,15 @@
+<%= render 'shared/header' %>
+
+<h2>Profile Page</h2>
+
+<hr />
+
+E-mail: <%= @user.email %>
+
+<hr />
+
+<%= link_to 'Posts', "/profiles/#{@user.id}/postss" %> | 
+<%= link_to 'Comments', "/profiles/#{@user.id}/commentss" %> | 
+<%= link_to 'Friends', "/profiles/#{@user.id}/friends" %> -
+
+

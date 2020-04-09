@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get '/top', to: "static_pages#top"
   get "/profiles/:id", to: "profiles#show"
   get "/profiles/:id/friends", to: "profiles#friends"
+  get "/profiles/:id/posts", to: "profiles#user_posts"
+  get "/profiles/:id/comments", to: "profiles#user_comments"
   delete "/delete/user/:id", to: "delete_user#destroy"
+  post "/like/post", to: "liking_posts#create"
+  post "/like/comment", to: "liking_comments#create"
 
   devise_for :users, controllers: { sessions: 'users/sessions', 
                                     passwords: "users/passwords",

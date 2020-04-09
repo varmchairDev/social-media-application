@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   has_many :liked_posts, class_name: "LikePost",
                          foreign_key: "post_id", 
                          dependent: :destroy
+
+  validates :user_id, presence: true
 end
