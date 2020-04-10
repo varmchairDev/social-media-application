@@ -23,18 +23,15 @@ module ApplicationHelper
     end
 
     def like_something(like_what) #accepts string argument.
-        user_id = params[:like_post][:user_id]
-        post_id = params[:like_post]["#{like_what}_id".to_sym]
+        user_id = params[:like_something][:user_id]
+        like_id = params[:like_something]["#{like_what}_id".to_sym]
         class_name = "Like#{like_what.capitalize}".constantize
-        redirect_back(fallback_location: root_url) unless class_name.where("user_id = ? AND post_id = ?", user_id, post_id).exists?
-        class_name.new(user_id: user_id, post_id: post_id)
-        if class_name.save
-            flash[:success] = "Post liked!"
-            redirect_back(fallback_location: root_url)
+        if class_name.new(:user_id => user_id, "#{like_what}_id".to_sym => like_id).save
+            flash[:success] = "Liked!"
         else
             flash[:error] = "Failed to like :("
-            redirect_back(fallback_location: root_url)
         end
+        redirect_back(fallback_location: root_url)
     end
 
     def get_friends(user)

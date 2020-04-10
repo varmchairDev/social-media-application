@@ -1,0 +1,5 @@
+<%= form_for :block, url: "/block/user", action: :create do |f| %>
+    <%= f.hidden_field :blocker_id, value: current_user %>
+    <%= f.hidden_field :blocked_id, value: user_id %>
+    <%= f.submit "Block" %>
+<% end %>

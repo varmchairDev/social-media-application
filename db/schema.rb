@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_151612) do
+ActiveRecord::Schema.define(version: 2020_04_10_134239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["comment_id"], name: "index_like_comments_on_comment_id"
+    t.index ["user_id", "comment_id"], name: "index_like_comments_on_user_id_and_comment_id", unique: true
     t.index ["user_id"], name: "index_like_comments_on_user_id"
   end
 
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_151612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_like_posts_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_like_posts_on_user_id_and_post_id", unique: true
     t.index ["user_id"], name: "index_like_posts_on_user_id"
   end
 
