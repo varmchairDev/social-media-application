@@ -20,8 +20,8 @@ class BlockingUsersController < ApplicationController
     end
 
     def destroy
-        blocker_id = params[:block][:blocker_id]
-        blocked_id = params[:block][:blocked_id]
+        blocker_id = params[:blocker_id]
+        blocked_id = params[:blocked_id]
         if BlockingUser.where("blocker_id = ? AND blocked_id = ?", blocker_id, blocked_id).destroy
             flash[:success] = "User unblocked!"
         else

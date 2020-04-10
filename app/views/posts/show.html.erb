@@ -1,10 +1,29 @@
 <section id="post-header">
     <h1><%= @post.title %></h1>
     <p>Sended by: <%= link_to @post.user.email, "/profiles/#{@post.user.id}" %> | <%= model_date(@post) %></p>
+    <% if current_user.added_friends.include?(@post.user) || current_user.added_by_friends.include?(@post.user) %>
+        <%= render 'shared/befriend', user_id: @post.user.id %> |
+    <% else %>
+        <%= link_to 'Unfriend :(', "/unfriend/user/#{current_user.id}/#{@post.user.id}", method: :delete, data: { confirm: "Are you sure?" } %> |
+    <% end %>
+    <% if current_user.blocked_users.include?(@post.user) %>
+        <%= render 'shared/block_user', user_id: current_user.id %>
+    <% else %>
+        <%= link_to 'Unblock', "/unblock/user/#{current_user.id}/#{@post.user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
     <p>Likes: <%= @post.liked_posts.count %></p>
 </section>
 
 <section id="post-content"><%= @post.content %></section>
+
+<hr />
+
+Likes: <%= @post.like_posts.count %> |
+<% if !current_user.liked_posts.include?(@post) %> 
+    <%= render 'shared/like_something', what: "post", like_id: @post.id %>
+<% else  %>
+    You've liked this post
+<% end %>
 
 <hr />
 

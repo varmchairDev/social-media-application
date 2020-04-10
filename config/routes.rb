@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   post "/like/post", to: "liking_posts#create"
   post "/like/comment", to: "liking_comments#create"
   post "/befriend/user", to: "affairs_controller#create"
-  delete "/unfriend/user", to: "affairs_controller#destroy"
+  delete "/unfriend/user/:user_id/:friend_id", to: "affairs_controller#destroy"
   post "/block/user", to: "blocking_users#create"
-  delete "/unblock/user", to: "blocking_users#destroy"
+  delete "/unblock/user/:blocker_id/:blocked_id", to: "blocking_users#destroy"
 
 
   devise_for :users, controllers: { sessions: 'users/sessions', 

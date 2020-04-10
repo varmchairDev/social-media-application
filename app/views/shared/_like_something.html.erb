@@ -1,5 +1,5 @@
 <%= form_for :like_something, url: "/like/#{what}", action: :create do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field "#{what}_id".to_sym, value: like_id %>
-    <%= f.submit "Like" %>
+    <%= f.submit "Like <3" %>
 <% end %>
