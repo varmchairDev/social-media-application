@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root "root_page#welcome"
 
-  resources :comments, except: [:index]
+  resources :comments, except: [:index, :new, :show]
   resources :posts, except: [:index]
   get '/home', to: "static_pages#home"
   get '/index', to: "static_pages#index"

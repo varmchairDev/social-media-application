@@ -12,18 +12,6 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, 
                                      :update, :destroy]
 
-  # GET /comments
-  # GET /comments.json
-
-  # GET /comments/1
-  # GET /comments/1.json
-  def show
-  end
-
-  # GET /comments/new
-  def new
-    @comment = current_user.comments.build
-  end
 
   # GET /comments/1/edit
   def edit
@@ -36,10 +24,10 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to @comment.post, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        format.html { redirect_back(fallback_location: root_url) }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

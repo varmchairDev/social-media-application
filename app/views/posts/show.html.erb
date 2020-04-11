@@ -2,6 +2,9 @@
     <h1><%= @post.title %></h1>
     <p>Sended by: <%= link_to @post.user.email, "/profiles/#{@post.user.id}" %> | <%= model_date(@post) %></p>
     <%= render 'shared/affairs_form', target: @post.user %>
+    <% if current_user.admin? && current_user != @post.user %>
+        - <%= link_to 'Delete', "/delete/user/#{@post.user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
     <p>Likes: <%= @post.liked_posts.count %></p>
 </section>
 
@@ -9,14 +12,14 @@
 
 <hr />
 
-Likes: <%= @post.like_posts.count %> |
+Likes: <%= @post.liked_posts.count %> |
 <%= render 'shared/liking_form', target: @post, target_name: "post" %>
 
 <hr />
 
 <section id="render-new-comment-form">
     <h3 id="comment-form-title">Send Your Comment</h3>
-    <%= render 'comments/new' %>
+    <%= render 'comments/form', comment: current_user.comments.build, post: @post %>
 </section>
 
 <hr />
@@ -27,6 +30,9 @@ Likes: <%= @post.like_posts.count %> |
         <section id=<%= section_id%>>
             <p>Sended by: <%= link_to comment.user.email, "/profiles/#{comment.user.id}" %> | <%= model_date(comment) %></p>
             <%= render 'shared/affairs_form', target: comment.user %>
+            <% if current_user.admin? && current_user != comment.user %>
+                - <%= link_to 'Delete', "/delete/user/#{comment.user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
             <p>Likes: <%= comment.liked_comments.count %></p>
             <p><%= comment.content %></p>
             <%= render 'shared/liking_form', target: comment, target_name: "comment" %>
