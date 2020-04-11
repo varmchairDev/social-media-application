@@ -35,8 +35,8 @@ module ApplicationHelper
     end
 
     def get_friends(user)
-        Friend.where("user_id = ? OR friend_id = ?", user.id)
-              .order(desc: :created_at)
+        Friend.where("user_id = ? OR friend_id = ?", user.id, user.id)
+              .order(created_at: :desc)
               .map { |f| f.user_id != user.id ? User.find(f.user_id) : User.find(f.friend_id) }
     end
 end
