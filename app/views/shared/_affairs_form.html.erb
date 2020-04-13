@@ -1,8 +1,8 @@
 <% if current_user != target %>
-    <% if !current_user.added_friends.include?(target) || !current_user.added_by_friends.include?(target) %>
-        <%= render 'shared/befriend', target_id: target.id %> 
+    <% if current_user.added_friends.include?(target) || current_user.added_by_friends.include?(target) %>
+        <%= link_to 'Unfriend :(', "/unfriend/user/#{current_user.id}/#{target.id}", method: :delete, data: { confirm: "Are you sure?" } %>
     <% else %>
-        <%= link_to 'Unfriend :(', "/unfriend/user/#{current_user.id}/#{target.id}", method: :delete, data: { confirm: "Are you sure?" } %> |
+        <%= render 'shared/befriend', target_id: target.id %> 
     <% end %>
     <% if !current_user.blocked_users.include?(target) %>
         <%= render 'shared/block_user', user_id: current_user.id %>

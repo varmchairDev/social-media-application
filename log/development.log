@@ -10053,3 +10053,1813 @@ puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
 puma (3.12.4) lib/puma/server.rb:476:in `process_client'
 puma (3.12.4) lib/puma/server.rb:334:in `block in run'
 puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:03:16 +0300
+  [1m[35m (39.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:03:17 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (11.5ms)
+  Rendered users/sessions/new.html.erb within layouts/application (413.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 1376ms (Views: 1078.2ms | ActiveRecord: 165.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:03:34 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3AbX9fZd65QhsHaRjr17hXqvyguX6r5kmelm3QmV6MbCk0oD/0gbCmXtu1SpTijEUejaAoSuRNXhDjLCBM5yA==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (44.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (40.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2020-04-13 14:03:35.125857"], ["last_sign_in_at", "2020-04-12 15:11:30.700146"], ["sign_in_count", 7], ["updated_at", "2020-04-13 14:03:35.127122"], ["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (20.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 617ms (ActiveRecord: 106.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:03:35 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-13 17:03:35 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 58ms (Views: 52.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:03:38 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  [1m[36mUser Exists (142.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (1023.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 1107ms (Views: 953.2ms | ActiveRecord: 144.3ms)
+
+
+Started GET "/top" for 127.0.0.1 at 2020-04-13 17:03:43 +0300
+Processing by StaticPagesController#top as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (41.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/static_pages_controller.rb:18
+  [1m[35m (96.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/static_pages_controller.rb:18
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/controllers/static_pages_controller.rb:18
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/static_pages_controller.rb:18
+  Rendering static_pages/top.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  Rendered static_pages/_view_posts.html.erb (34.2ms)
+  Rendered static_pages/top.html.erb within layouts/application (36.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 319ms (Views: 86.8ms | ActiveRecord: 152.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2020-04-13 17:03:48 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered shared/_affairs_form.html.erb (1.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_liking_form.html.erb (0.7ms)
+  Rendered shared/_show_errors.html.erb (1.3ms)
+  Rendered comments/_form.html.erb (93.1ms)
+  [1m[36mComment Load (79.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 1]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 2]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 3]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.5ms)
+  Rendered posts/show.html.erb within layouts/application (498.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 587ms (Views: 453.3ms | ActiveRecord: 122.7ms)
+
+
+Started DELETE "/posts/2" for 127.0.0.1 at 2020-04-13 17:03:54 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/MLibCuSmDNbdv3zr9cbFgjaZO7E4zEkQucLEN9hY1zYf7qg+tBHaDWPxbEitNPEY1aF6W8zTORfiio427ZNdw==", "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mLikePost Load (0.8ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/posts_controller.rb:41
+  [1m[35m (20.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:41
+Redirected to http://localhost:3000/top
+Completed 302 Found in 36ms (ActiveRecord: 23.8ms)
+
+
+Started GET "/top" for 127.0.0.1 at 2020-04-13 17:03:54 +0300
+Processing by StaticPagesController#top as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/static_pages_controller.rb:18
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/static_pages_controller.rb:18
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/static_pages_controller.rb:18
+  Rendering static_pages/top.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  Rendered static_pages/_view_posts.html.erb (7.8ms)
+  Rendered static_pages/top.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 154ms (Views: 138.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2020-04-13 17:03:57 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered shared/_affairs_form.html.erb (1.9ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_liking_form.html.erb (0.7ms)
+  Rendered shared/_show_errors.html.erb (4.8ms)
+  Rendered comments/_form.html.erb (13.0ms)
+  [1m[36mComment Load (4.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 1]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 2]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 3]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.2ms)
+  Rendered posts/show.html.erb within layouts/application (92.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 196ms (Views: 175.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:04:43 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/profiles/:id/liked_posts" for 127.0.0.1 at 2020-04-13 17:04:46 +0300
+Processing by ProfilesController#liked_posts as HTML
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+Completed 404 Not Found in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:id):
+  
+app/controllers/profiles_controller.rb:34:in `set_user'
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:05:32 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (1.2ms)
+  [1m[36mUser Exists (46.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (2.6ms)
+  Rendered shared/_affairs_form.html.erb (101.2ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (2.6ms)
+  Rendered shared/_liking_form.html.erb (32.0ms)
+  Rendered shared/_show_errors.html.erb (3.5ms)
+  Rendered comments/_form.html.erb (17.1ms)
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (0.6ms)
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.4ms)
+  Rendered shared/_affairs_form.html.erb (5.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.8ms)
+  Rendered shared/_liking_form.html.erb (1.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (196.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 252ms (Views: 191.7ms | ActiveRecord: 53.4ms)
+
+
+Started POST "/befriend/user" for 127.0.0.1 at 2020-04-13 17:05:34 +0300
+Processing by RelationshipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0IuYzPgmrqjZ176s1eIdMmQTTx2CDMcKc1oClV0cvOj/3vyjYR33bdEJW3ZWsKmjdlbpicOWIiM9lTtKu9Yuw==", "befriend"=>{"user_id"=>"5", "friend_id"=>"6"}, "commit"=>"Befriend <3"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mFriend Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friends" WHERE (user_id = '6' AND friend_id = '5') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:7
+  [1m[36mFriend Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friends" WHERE (user_id = '5' AND friend_id = '6') LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:9
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:9
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocker_id" WHERE "blocking_users"."blocked_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocked_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:11
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocker_id" WHERE "blocking_users"."blocked_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocked_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/relationships_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/relationships_controller.rb:13
+  [1m[36mFriend Create (107.2ms)[0m  [1m[32mINSERT INTO "friends" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["friend_id", 6], ["created_at", "2020-04-13 14:05:34.607268"], ["updated_at", "2020-04-13 14:05:34.607268"]]
+  ↳ app/controllers/relationships_controller.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/relationships_controller.rb:13
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 168ms (ActiveRecord: 125.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:05:34 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (1.5ms)
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.3ms)
+  Rendered shared/_affairs_form.html.erb (12.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.2ms)
+  Rendered shared/_liking_form.html.erb (2.8ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (3.8ms)
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (0.5ms)
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (5.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.5ms)
+  Rendered shared/_liking_form.html.erb (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (53.8ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 94.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:05:37 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (1.2ms)
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.0ms)
+  Rendered shared/_affairs_form.html.erb (13.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.2ms)
+  Rendered shared/_liking_form.html.erb (2.6ms)
+  Rendered shared/_show_errors.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (3.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  Rendered shared/_befriend.html.erb (0.6ms)
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (6.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (1.1ms)
+  Rendered shared/_liking_form.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (51.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 98ms (Views: 87.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/profiles/5/friends" for 127.0.0.1 at 2020-04-13 17:05:42 +0300
+Processing by ProfilesController#friends as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mFriend Load (3.8ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id = 5 OR friend_id = 5) ORDER BY "friends"."created_at" DESC[0m
+  ↳ app/helpers/application_helper.rb:40
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:40
+  Rendering profiles/friends.html.erb within layouts/application
+  [1m[36mPost Exists (7.9ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:11
+  [1m[36mComment Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:19
+  [1m[36mLikePost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:44
+  Rendered shared/_view_users.html.erb (62.5ms)
+  Rendered profiles/friends.html.erb within layouts/application (68.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 150ms (Views: 115.2ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:07:08 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.2ms)
+  Rendered shared/_affairs_form.html.erb (8.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.2ms)
+  Rendered shared/_liking_form.html.erb (2.8ms)
+  Rendered shared/_show_errors.html.erb (1.0ms)
+  Rendered comments/_form.html.erb (3.8ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (3.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.4ms)
+  Rendered shared/_liking_form.html.erb (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (42.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 93ms (Views: 81.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/profiles/6" for 127.0.0.1 at 2020-04-13 17:07:41 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 81.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/profiles/6/friends" for 127.0.0.1 at 2020-04-13 17:07:45 +0300
+Processing by ProfilesController#friends as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mFriend Load (1.3ms)[0m  [1m[34mSELECT "friends".* FROM "friends" WHERE (user_id = 6 OR friend_id = 6) ORDER BY "friends"."created_at" DESC[0m
+  ↳ app/helpers/application_helper.rb:40
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:40
+  Rendering profiles/friends.html.erb within layouts/application
+  [1m[36mPost Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:11
+  [1m[36mComment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:19
+  [1m[36mLikePost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikePost Load (0.3ms)[0m  [1m[34mSELECT  "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1 ORDER BY "like_posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:23
+  [1m[36mCACHE LikePost Load (0.0ms)[0m  [1m[34mSELECT  "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1 ORDER BY "like_posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:28
+  [1m[36mLikeComment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:44
+  Rendered shared/_view_users.html.erb (44.6ms)
+  Rendered profiles/friends.html.erb within layouts/application (46.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 104ms (Views: 82.5ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:08:04 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 67ms (Views: 59.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/profiles/5/liked_posts" for 127.0.0.1 at 2020-04-13 17:08:07 +0300
+Processing by ProfilesController#liked_posts as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mLikePost Load (0.5ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE (user_id = 5) ORDER BY "like_posts"."created_at" DESC[0m
+  ↳ app/controllers/profiles_controller.rb:23
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:23
+  Rendering profiles/liked_posts.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:7
+  Rendered static_pages/_view_posts.html.erb (5.1ms)
+  Rendered profiles/liked_posts.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 73ms (Views: 62.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/profiles/5/liked_comments" for 127.0.0.1 at 2020-04-13 17:08:10 +0300
+Processing by ProfilesController#liked_comments as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mLikeComment Load (0.8ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE (user_id = 5) ORDER BY "like_comments"."created_at" DESC[0m
+  ↳ app/controllers/profiles_controller.rb:28
+  Rendering profiles/liked_comments.html.erb within layouts/application
+  Rendered static_pages/_view_posts.html.erb (4.1ms)
+  Rendered profiles/liked_comments.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @posts.each do |post| %>
+    2:     <%= link_to post.title, post_path(post) %>
+    3:     <br />
+    4:     Sended by: <%= post.user.email %>
+  
+app/views/static_pages/_view_posts.html.erb:1:in `_app_views_static_pages__view_posts_html_erb___4424369920340621440_70282689786780'
+app/views/profiles/liked_comments.html.erb:3:in `_app_views_profiles_liked_comments_html_erb___3323774066952615992_70282689599460'
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:08:23 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/profiles/:id/liked_comments" for 127.0.0.1 at 2020-04-13 17:09:23 +0300
+Processing by ProfilesController#liked_comments as HTML
+  Parameters: {"id"=>":id"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=:id):
+  
+app/controllers/profiles_controller.rb:34:in `set_user'
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:09:31 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/profiles/5/liked_comments" for 127.0.0.1 at 2020-04-13 17:09:33 +0300
+Processing by ProfilesController#liked_comments as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mLikeComment Load (0.4ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE (user_id = 5) ORDER BY "like_comments"."created_at" DESC[0m
+  ↳ app/controllers/profiles_controller.rb:28
+  Rendering profiles/liked_comments.html.erb within layouts/application
+  Rendered profiles/liked_comments.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:4
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/profiles/5/liked_posts" for 127.0.0.1 at 2020-04-13 17:10:43 +0300
+Processing by ProfilesController#liked_posts as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mLikePost Load (0.3ms)[0m  [1m[34mSELECT "like_posts".* FROM "like_posts" WHERE (user_id = 5) ORDER BY "like_posts"."created_at" DESC[0m
+  ↳ app/controllers/profiles_controller.rb:23
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:23
+  Rendering profiles/liked_posts.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:7
+  Rendered static_pages/_view_posts.html.erb (7.0ms)
+  Rendered profiles/liked_posts.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 72ms (Views: 63.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:11:48 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 61ms (Views: 56.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/index" for 127.0.0.1 at 2020-04-13 17:11:53 +0300
+Processing by StaticPagesController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/shared/_view_users.html.erb:3
+  [1m[36mPost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:11
+  [1m[36mComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:19
+  [1m[36mLikePost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikeComment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 LIMIT $2[0m  [["friend_id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  [1m[36mPost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:6
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:9
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 ORDER BY "posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:11
+  [1m[36mComment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "comments" WHERE "comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:14
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:17
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."user_id" = $1 ORDER BY "comments"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:19
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE "like_posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:22
+  [1m[36mLikePost Load (0.3ms)[0m  [1m[34mSELECT  "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1 ORDER BY "like_posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:23
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:23
+  [1m[36mCACHE LikePost Load (0.0ms)[0m  [1m[34mSELECT  "like_posts".* FROM "like_posts" WHERE "like_posts"."user_id" = $1 ORDER BY "like_posts"."id" DESC LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:28
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE "like_comments"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:31
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_view_users.html.erb:41
+  Rendered shared/_view_users.html.erb (74.0ms)
+  Rendered static_pages/index.html.erb within layouts/application (76.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 168ms (Views: 119.5ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/trending" for 127.0.0.1 at 2020-04-13 17:12:03 +0300
+Processing by StaticPagesController#trending as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at < '2020-04-13 11:12:03.294757')[0m
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  Rendering static_pages/trending.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  Rendered static_pages/_view_posts.html.erb (9.8ms)
+  Rendered static_pages/trending.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 123ms (Views: 90.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:12:05 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.3ms)
+  Rendered shared/_affairs_form.html.erb (11.4ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.4ms)
+  Rendered shared/_liking_form.html.erb (5.7ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (5.0ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.7ms)
+  Rendered shared/_affairs_form.html.erb (7.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.6ms)
+  Rendered shared/_liking_form.html.erb (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (68.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 146ms (Views: 126.0ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/like/comment" for 127.0.0.1 at 2020-04-13 17:12:10 +0300
+Processing by LikingCommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KjrT4RuaHk04Jxi6Np7SvzIyz+wKbHaqw/TKwIO1wHU177sWEJ1fYlLk4psl6j69VWKy9+O/62fR/rpt6xrAUw==", "like_something"=>{"user_id"=>"5", "comment_id"=>"4"}, "commit"=>"Like <3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mLikeComment Create (17.0ms)[0m  [1m[32mINSERT INTO "like_comments" ("user_id", "comment_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 5], ["comment_id", 4], ["created_at", "2020-04-13 14:12:10.529276"], ["updated_at", "2020-04-13 14:12:10.529276"]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/helpers/application_helper.rb:29
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 48ms (ActiveRecord: 22.4ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:12:10 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.0ms)
+  Rendered shared/_affairs_form.html.erb (6.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.1ms)
+  Rendered shared/_liking_form.html.erb (3.1ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (4.0ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (4.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.9ms)
+  Rendered shared/_liking_form.html.erb (2.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (49.7ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 113ms (Views: 104.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/profiles/5" for 127.0.0.1 at 2020-04-13 17:12:21 +0300
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:13
+  Rendered profiles/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 66ms (Views: 59.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/profiles/5/liked_comments" for 127.0.0.1 at 2020-04-13 17:12:22 +0300
+Processing by ProfilesController#liked_comments as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:34
+  [1m[36mLikeComment Load (0.6ms)[0m  [1m[34mSELECT "like_comments".* FROM "like_comments" WHERE (user_id = 5) ORDER BY "like_comments"."created_at" DESC[0m
+  ↳ app/controllers/profiles_controller.rb:28
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:28
+  Rendering profiles/liked_comments.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/profiles/liked_comments.html.erb:12
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/liked_comments.html.erb:16
+  Rendered profiles/liked_comments.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:4
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 82ms (Views: 58.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:12:26 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.3ms)
+  Rendered shared/_affairs_form.html.erb (15.0ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (2.3ms)
+  Rendered shared/_liking_form.html.erb (5.1ms)
+  Rendered shared/_show_errors.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (5.5ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.9ms)
+  Rendered shared/_affairs_form.html.erb (9.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.8ms)
+  Rendered shared/_liking_form.html.erb (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (72.7ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 137ms (Views: 121.7ms | ActiveRecord: 7.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-13 17:12:29 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L5l/alrJdirDFDcgNfPFWp/wTmu55TRAY8yI1ntDDQMLJCemi4upca3tD2K4kA2I9HyvbBI1SYB+oan+f5QjKA=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 44ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:12:29 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:12:29 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:13:56 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:13:56 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (5.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (49.0ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 478ms (Views: 406.8ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:14:03 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9vIW4vplGlM9BOGb68qqhiQru4BZjOoOtQynxnjJl8/5ERgb+/h/woiINicJECUUIB9fHEdLXbub9jrIEWEIXw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update All (75.4ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = COALESCE("failed_attempts", 0) + 1 WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 243ms (ActiveRecord: 80.6ms)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9vIW4vplGlM9BOGb68qqhiQru4BZjOoOtQynxnjJl8/5ERgb+/h/woiINicJECUUIB9fHEdLXbub9jrIEWEIXw==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered users/sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 200 OK in 167ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:14:09 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6X21tCbx6bQLtnY3XKVlPrDBy2/ExvOH0zyFBY9YPPbmnrtNJ2yMJb46oYu+f+qstPUv89oBRDL9xhgL5vCjZg==", "user"=>{"email"=>"admin@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "failed_attempts" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["failed_attempts", 0], ["updated_at", "2020-04-13 14:14:09.973568"], ["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["sign_in_count", 8], ["current_sign_in_at", "2020-04-13 14:14:09.978941"], ["last_sign_in_at", "2020-04-13 14:03:35.125857"], ["updated_at", "2020-04-13 14:14:09.979927"], ["id", 5]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 179ms (ActiveRecord: 31.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:14:10 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-13 17:14:10 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/trending" for 127.0.0.1 at 2020-04-13 17:14:12 +0300
+Processing by StaticPagesController#trending as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at < '2020-04-13 11:14:12.962067')[0m
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  Rendering static_pages/trending.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  Rendered static_pages/_view_posts.html.erb (17.9ms)
+  Rendered static_pages/trending.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 156ms (Views: 63.2ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:14:14 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.8ms)
+  Rendered shared/_affairs_form.html.erb (32.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.5ms)
+  Rendered shared/_liking_form.html.erb (7.7ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (5.0ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (4.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.7ms)
+  Rendered shared/_liking_form.html.erb (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (119.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 189ms (Views: 151.8ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:16:09 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (23.8ms)
+  Rendered shared/_affairs_form.html.erb (32.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_like_something.html.erb (1.9ms)
+  Rendered shared/_liking_form.html.erb (3.9ms)
+  Rendered shared/_show_errors.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (4.9ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (3.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_like_something.html.erb (0.5ms)
+  Rendered shared/_liking_form.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (75.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 127ms (Views: 114.9ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:20:39 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.1ms)
+  Rendered shared/_affairs_form.html.erb (10.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (3.5ms)
+  Rendered shared/_show_errors.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (3.5ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (5.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (46.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 122ms (Views: 113.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:21:56 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.3ms)
+  Rendered shared/_affairs_form.html.erb (9.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (3.2ms)
+  Rendered shared/_show_errors.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (4.5ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (5.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (55.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 169ms (Views: 152.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:22:52 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.4ms)
+  Rendered shared/_affairs_form.html.erb (8.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (2.1ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (4.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (3.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (46.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 100ms (Views: 89.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:23:05 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.3ms)
+  Rendered shared/_affairs_form.html.erb (10.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (2.5ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (3.7ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (3.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (44.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 98ms (Views: 82.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:23:36 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.5ms)
+  Rendered shared/_affairs_form.html.erb (8.9ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (2.0ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (3.4ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.5ms)
+  Rendered shared/_affairs_form.html.erb (3.5ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (41.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 100ms (Views: 78.1ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:23:48 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.5ms)
+  Rendered shared/_affairs_form.html.erb (10.8ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  [1m[36mLikePost Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_posts" WHERE (user_id = 5 AND post_id = 3) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.9ms)
+  Rendered shared/_show_errors.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (3.4ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 5], ["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (0.6ms)
+  Rendered shared/_affairs_form.html.erb (3.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 5 AND comment_id = 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  Rendered posts/show.html.erb within layouts/application (47.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 86.6ms | ActiveRecord: 10.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-13 17:24:22 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V85Vw9pqocLRmLtYXq1Q0DDhWoUNgIvLMQeAB/tSOiVW63yOi1gAuJl2SQ1u9ivyr/0YFXqi9sGi528M4YkgAw=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:24:22 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:24:22 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.7ms)
+  Rendered users/sessions/new.html.erb within layouts/application (32.2ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:24:29 +0300
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z/+0Nb4rqfk7H7l39Pxq5/VGIXf8O+Ylo3zABXXA5fnObcQNyb64TuzKKtxGzL9FRfT1KSAMot1EGJlMmG7wYA==", "user"=>{"email"=>"garrusfeverian@mail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "garrusfeverian@mail.com"], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2020-04-13 14:24:29.627078"], ["sign_in_count", 2], ["updated_at", "2020-04-13 14:24:29.628063"], ["id", 6]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (213.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 370ms (ActiveRecord: 218.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:24:29 +0300
+Processing by RootPageController#welcome as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/root_page_controller.rb:4
+Redirected to http://localhost:3000/home
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2020-04-13 17:24:29 +0300
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/trending" for 127.0.0.1 at 2020-04-13 17:24:31 +0300
+Processing by StaticPagesController#trending as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at < '2020-04-13 11:24:31.229893')[0m
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/controllers/static_pages_controller.rb:14
+  Rendering static_pages/trending.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/static_pages/_view_posts.html.erb:4
+  Rendered static_pages/_view_posts.html.erb (8.6ms)
+  Rendered static_pages/trending.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 80ms (Views: 57.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:24:32 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered shared/_affairs_form.html.erb (0.9ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_liking_form.html.erb (0.9ms)
+  Rendered shared/_show_errors.html.erb (0.7ms)
+  Rendered comments/_form.html.erb (4.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.2ms)
+  Rendered shared/_affairs_form.html.erb (9.5ms)
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 6 AND comment_id = 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_like_something.html.erb (1.5ms)
+  Rendered shared/_liking_form.html.erb (4.8ms)
+  Rendered posts/show.html.erb within layouts/application (53.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 109ms (Views: 90.6ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/like/comment" for 127.0.0.1 at 2020-04-13 17:24:39 +0300
+Processing by LikingCommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gWpkjsYleJanUCFfkzkXTBhak4OC5D2T91olRJxjXax94f3y0xrtlu2a8s3rNmDh+1IX7A2gH4YkZdXgjLdPbQ==", "like_something"=>{"user_id"=>"6", "comment_id"=>"5"}, "commit"=>"Like <3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[36mLikeComment Create (1.0ms)[0m  [1m[32mINSERT INTO "like_comments" ("user_id", "comment_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["comment_id", 5], ["created_at", "2020-04-13 14:24:39.603095"], ["updated_at", "2020-04-13 14:24:39.603095"]]
+  ↳ app/helpers/application_helper.rb:29
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/helpers/application_helper.rb:29
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 41ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-04-13 17:24:39 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  Rendered shared/_affairs_form.html.erb (1.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:8
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_posts" WHERE "like_posts"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered shared/_liking_form.html.erb (0.6ms)
+  Rendered shared/_show_errors.html.erb (0.6ms)
+  Rendered comments/_form.html.erb (4.7ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered shared/_affairs_form.html.erb (0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 4]]
+  ↳ app/views/posts/show.html.erb:43
+  Rendered shared/_liking_form.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."friend_id" WHERE "friends"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friends" ON "users"."id" = "friends"."user_id" WHERE "friends"."friend_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["friend_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:2
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "blocking_users" ON "users"."id" = "blocking_users"."blocked_id" WHERE "blocking_users"."blocker_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["blocker_id", 6], ["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shared/_affairs_form.html.erb:7
+  Rendered shared/_block_user.html.erb (1.0ms)
+  Rendered shared/_affairs_form.html.erb (7.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "like_comments" WHERE "like_comments"."comment_id" = $1[0m  [["comment_id", 5]]
+  ↳ app/views/posts/show.html.erb:43
+  [1m[36mLikeComment Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "like_comments" WHERE (user_id = 6 AND comment_id = 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/shared/_liking_form.html.erb:2
+  Rendered shared/_liking_form.html.erb (1.1ms)
+  Rendered posts/show.html.erb within layouts/application (50.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 109ms (Views: 96.7ms | ActiveRecord: 4.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2020-04-13 17:24:47 +0300
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zJ5YVV7G7TKEfVL23uWu3IY9+WQwfVqBrKo1EF0zNP+JGdy6b9jtpecIPg9vmeKASvX4Tm797oFFDEipo72Zdw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/onur/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-04-13 17:24:47 +0300
+Processing by RootPageController#welcome as HTML
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-04-13 17:24:47 +0300
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /home/onur/.rvm/gems/ruby-2.6.3/gems/devise-4.7.1/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered users/sessions/new.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 85ms (Views: 84.1ms | ActiveRecord: 0.0ms)
+
+

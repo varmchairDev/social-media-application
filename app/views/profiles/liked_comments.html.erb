@@ -1,3 +1,19 @@
 <h2>Liked Comments by <%= @user.email %></h2>
 
-<%= render 'static_pages/view_posts' %>
+<% @comments.each do |comment| %>
+    <%= comment.content %>
+
+    <br />
+
+    <%= model_date(comment) %>
+
+    <br />
+
+    Likes: <%= comment.liked_comments.count %>
+
+    <br />
+
+    <%= link_to 'Visit Post', post_path(comment.post.id) %>
+
+    <hr />
+<% end %>
