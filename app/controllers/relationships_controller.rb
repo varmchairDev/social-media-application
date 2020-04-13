@@ -1,11 +1,12 @@
-class AffairsController < ApplicationController
+class RelationshipsController < ApplicationController
     before_action :only_users
 
     def create
         user_id = params[:befriend][:user_id]
         friend_id = params[:befriend][:friend_id]
-        redirect_back(fallback_location: root_url) if Friend.where("user_id = ? AND friend_id = ?", friend_id, user_id).exists?
-        if User.find(user_id).blockers.include?(User.find(friend_id))
+        if Friend.where("user_id = ? AND friend_id = ?", friend_id, user_id).exists? || Friend.where("user_id = ? AND friend_id = ?", user_id, friend_id).exists?
+            redirect_back(fallback_location: root_url) 
+        elsif User.find(user_id).blockers.include?(User.find(friend_id))
             flash[:error] = "Error! You're blocked by this user."
         elsif User.find(friend_id).blockers.include?(User.find(user_id))
             flash[:error] = "Error! You can't befriend user you've blocked."

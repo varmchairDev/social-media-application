@@ -3,17 +3,24 @@
     <p>Sended by: <%= link_to @post.user.email, "/profiles/#{@post.user.id}" %> | <%= model_date(@post) %></p>
     <%= render 'shared/affairs_form', target: @post.user %>
     <% if current_user.admin? && current_user != @post.user %>
-        - <%= link_to 'Delete', "/delete/user/#{@post.user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to 'Delete', "/delete/user/#{@post.user.id}", method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
     <p>Likes: <%= @post.liked_posts.count %></p>
 </section>
 
 <section id="post-content"><%= @post.content %></section>
 
-<hr />
+<br />
 
 Likes: <%= @post.liked_posts.count %> |
 <%= render 'shared/liking_form', target: @post, target_name: "post" %>
+
+<% if current_user.admin? || current_user == @post.user %>
+    <% if !current_user.admin? %>
+        | <%= link_to 'Edit', edit_post_path(@post) %>
+    <% end %>
+    | <%= link_to 'Delete', @post, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
 
 <hr />
 
@@ -35,6 +42,12 @@ Likes: <%= @post.liked_posts.count %> |
             <% end %>
             <p>Likes: <%= comment.liked_comments.count %></p>
             <p><%= comment.content %></p>
+            <% if current_user.admin? || current_user == comment.user %>
+                <% if !current_user.admin? %>
+                    | <%= link_to 'Edit', edit_comment_path(comment) %>
+                <% end %>
+                | <%= link_to 'Delete', comment, method: :delete, data: { confirm: "Are you sure?" } %>
+            <% end %>
             <%= render 'shared/liking_form', target: comment, target_name: "comment" %>
             <% if current_user == comment.user %>
                 <%= link_to 'Edit', edit_comment_path(comment) %>

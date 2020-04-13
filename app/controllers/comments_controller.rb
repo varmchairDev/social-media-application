@@ -24,12 +24,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment.post, notice: 'Comment was successfully created.' }
-        format.json { render :show, status: :created, location: @comment }
+        notice_message = 'Comment was successfully created.'
       else
-        format.html { redirect_back(fallback_location: root_url) }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        notice_message = 'Failed to create comment.'
       end
+      format.html { redirect_to @comment.post, notice: notice_message }
     end
   end
 
@@ -38,11 +37,9 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
+        format.html { redirect_to @comment.post, notice: 'Comment was successfully updated.' }
       else
-        format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.html { render :edit, notice: "Failed to update comment." }
       end
     end
   end

@@ -10,6 +10,11 @@ E-mail: <%= @user.email %>
 <%= link_to 'Comments', "/profiles/#{@user.id}/comments" %> | 
 <%= link_to 'Friends', "/profiles/#{@user.id}/friends" %>
 
+<% if current_user.added_friends.include?(@user) || @user.added_friends.include?(current_user) %>
+    | <%= link_to 'Liked Posts', "/profiles/:id/liked_posts" %>
+    | <%= link_to 'Liked Comments', "/profiles/:id/liked_comments" %>
+<% end %>
+
 <% if current_user == @user %>
     - <%= link_to 'Edit', edit_user_registration_path %>
 <% elsif current_user.admin? %>

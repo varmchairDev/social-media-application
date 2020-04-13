@@ -4,5 +4,8 @@
     Sended by: <%= post.user.email %>
     <br />
     <%= model_date(post) %>
+    <% if current_user.admin? %>
+        | <%= link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
     <hr />
 <% end %>

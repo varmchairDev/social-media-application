@@ -9,7 +9,7 @@
         <%= link_to user.posts.last.title, post_path(user.posts.last) %>
         <br />
         <%= model_date(user.posts.last) %>
-        <hr />
+        <br />
     <% end %>
     <% if user.comments.exists?  %>
         <h4>Last Comment</h4>
@@ -17,7 +17,7 @@
         <%= link_to user.comments.last.content, post_path(user.comments.last.post) %>
         <br />
         <%= model_date(user.comments.last) %>
-        <hr />
+        <br />
     <% end %>
     <% if user.liked_posts.exists? %>
         <% post = Post.find(user.liked_posts.last.post_id) %>
@@ -26,7 +26,7 @@
         <%= link_to post.title, post_path(post) %>
         <br />
         <%= model_date(user.liked_posts.last) %>
-        <hr />
+        <br />
     <% end %>
     <% if user.liked_comments.exists? %>
         <% comment = Comment.find(user.liked_comments.last.comment_id) %>
@@ -35,7 +35,7 @@
         <%= link_to comment.content, post_path(comment.post) %>
         <br />
         <%= model_date(comment) %>
-        <hr />
+        <br />
     <% end %>
     <%= link_to 'View Profile', "/profiles/#{user.id}" %>
     <% if user.added_friends.exists? || user.added_by_friends.exists? %>

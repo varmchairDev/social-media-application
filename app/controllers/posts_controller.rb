@@ -33,17 +33,16 @@ class PostsController < ApplicationController
     if @post.save 
       redirect_to @post 
     else
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: trending_path)
     end
   end
 
   def destroy
     @post.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: trending_path)
   end
 
   def show
-    @comment = current_user.comments.build
   end
 
 

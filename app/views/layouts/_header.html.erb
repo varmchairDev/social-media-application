@@ -1,16 +1,16 @@
 <section id="app-header">
     <h1 id="app-title">Social Media App</h1>
 
-    <section id="app nav">
-        <%= link_to 'Users', index_path %> |
-        <%= link_to 'Top', top_path %> |
-        <%= link_to 'Trending', trending_path %> |
-        <% if current_user %>
+    <% if current_user %>
+        <section id="app nav">
+            <%= link_to 'Users', index_path %> |
+            <%= link_to 'Top', top_path %> |
+            <%= link_to 'Trending', trending_path %> |
             <%= link_to 'Create a New Post', new_post_path %> |
             <%= link_to 'Profile', "/profiles/#{current_user.id}" %> |
             <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-        <% end %>
-    </section>
+        </section>
+    <% end %>
 </section>
 
 <hr />
